@@ -1,14 +1,14 @@
-// we're importing a mongoose instance from schema.js
-const mongoose = require('./schema.js')
+// we're importing a mongoose instance which has our model configuration attached to it
+const mongoose = require('./models/bookmark')
 
 // using native ES6 Promises, in place of mongoose's deprecated mpromise library
 // `Promise` will provide us with .then() for success, and .catch() for errors
 mongoose.Promise = Promise
 
-//set the uri for connecting to our local mongodb
+// set the uri for connecting to our local mongodb
 const mongoUri = 'mongodb://localhost/book-e'
 
-//connect to the database, with the mongoose instance that was 
+// connect to the database, with the imported mongoose instance
 mongoose
   .connect(mongoUri, {useMongoClient: true})
   .then(connection => console.log(`Connection established to db '${connection.db.databaseName}'`))
