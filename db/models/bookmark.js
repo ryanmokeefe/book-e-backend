@@ -7,8 +7,8 @@ const BookmarkSchema = new mongoose.Schema({
   url: String
 })
 
-// builds a model from the schema. with a model, to query and change data in the database
-// attaches it to our mongoose instance
-mongoose.model("Bookmark", BookmarkSchema)
+// builds a model from the schema, and attaches it to our mongoose instance.
+// a model is used to query and change data in the database
+mongoose.model('Bookmark', BookmarkSchema)
 
 module.exports = mongoose
