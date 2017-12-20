@@ -1,6 +1,7 @@
-const express = require('express')
-const app = express()
+const express             = require('express')
 const bookmarksController = require('./controllers/bookmarks')
+
+const app = express()
 const PORT = 8080
 
 app.use('/', bookmarksController)
