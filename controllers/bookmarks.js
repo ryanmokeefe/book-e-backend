@@ -33,4 +33,10 @@ Router.put("/:title", (req, res) => {
     .then(bookmark => res.json(bookmark))
 })
 
+Router.delete("/:title", (req, res) => {
+  Bookmark
+    .findOneAndRemove({ title: req.params.title })
+    .then(bookmark => res.json(bookmark))
+})
+
 module.exports = Router
