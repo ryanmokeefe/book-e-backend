@@ -7,7 +7,10 @@ const app = express()
 const PORT = 8080
 
 app.use(cors())
-app.use(parser.json({extended: true}))
+
+app.use(parser.urlencoded({extended: true}))
+app.use(parser.json())
+
 app.use('/api/bookmarks/', bookmarksController)
 
-app.listen(PORT, () => console.log(`It's going down on port ${PORT}`))
+app.listen(PORT, () => console.log(`Live on port ${PORT}`))
