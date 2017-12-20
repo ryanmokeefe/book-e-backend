@@ -2,6 +2,7 @@ const mongoose = require('./connection')
 const seeds    = require('./seedData')
 
 const Bookmark = mongoose.model('Bookmark')
+
 mongoose.Promise = Promise
 
 Bookmark.remove({}).then(_ => {

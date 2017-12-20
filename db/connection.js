@@ -2,7 +2,8 @@
 const mongoose = require('./models/bookmark')
 
 // using native ES6 Promises, in place of mongoose's deprecated mpromise library
-// `Promise` will provide us with .then() for success, and .catch() for errors
+// `Promise` will provides us with a couple methods: .then() for success, 
+// and .catch() for errors
 mongoose.Promise = Promise
 
 // set the uri for connecting to our local mongodb
