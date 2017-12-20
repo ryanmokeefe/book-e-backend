@@ -9,12 +9,17 @@ const Bookmark = mongoose.model('Bookmark')
 const Router = express.Router()
 
 // set a handler function on the router instance to handle GET requests to '/'
-Router.get('/api/bookmarks/', (req, res) => {
+Router.get('/', (req, res) => {
   Bookmark.find({}).then(bookmarks => res.json(bookmarks))
 })
 
-Router.get('/api/bookmarks/:title', (req, res) => {
+Router.get('/:title', (req, res) => {
   Bookmark.findOne({title: req.params.title}).then(bookmark => res.json(bookmark))
+})
+
+Router.post('/', (req, res) => {
+  console.log(req.body)
+  Bookmark.create(req.body).then(bookmarks => res.json(bookmarks))
 })
 
 module.exports = Router
